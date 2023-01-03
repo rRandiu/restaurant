@@ -9,7 +9,7 @@ ag = "A", "B", "C", "D", "E", "F"
 ############################
 #      Menu Selection      #
 ############################
-selec1 = [equalbar, "|        RESTAURANTE S.A      |", "|            MENÚ             |", equalbar, "| A |Desayuno                 |", "| B |Almuerzo                 |", "| C |Cena                     |", "| D |========= SALIR =========|", equalbar]
+selec1 = [equalbar, "|        RESTAURANTE S.A      |", "|            MENÚ             |", equalbar, "| A |Desayuno                 |", "| B |Almuerzo                 |", "| C |Cena                     |", "| P |Pagar                    |", "| D |========= SALIR =========|", equalbar]
 list1 = len(selec1)
 
 ############################
@@ -30,12 +30,12 @@ list4 = len(cena)
 ############################
 #        Selection         #
 ############################
+pricequeue = []
+prevqueue = []
 while True:
  for list1 in selec1:
     print(list1)
  selection = input("Seleciona una opcion: ")
- pricequeue = []
- prevqueue = []
  if selection == "A":
     for list2 in desayuno:
         print(list2)
@@ -58,14 +58,17 @@ while True:
             cantidad = input("Cuantos Jugo de Papaya desea?: ")
             pricequeue.append(8*float(cantidad))
         elif orden1 == "E":
-            pricequeue.append(7)
             prevqueue.append("Pan con Pollo")
+            cantidad = input("Cuantos Pan con Pollo desea?: ")
+            pricequeue.append(7*float(cantidad))
         elif orden1 == "F":
-            pricequeue.append(7)
             prevqueue.append("Pan con Jamón")
+            cantidad = input("Cuantos Pan con Pollo desea?: ")
+            pricequeue.append(7*float(cantidad))
         elif orden1 == "G":
-            pricequeue.append(7)
             prevqueue.append("Pan con Tortilla")
+            cantidad = input("Cuantos Pan con Pollo desea?: ")
+            pricequeue.append(7*float(cantidad))
         elif orden1 == "H":
             print("Su lista:")
             showqueque = len(prevqueue)
@@ -88,6 +91,11 @@ while True:
             print(list4)
     while True:
         orden3 = input("Selecione sus platillos: ")
+ elif selection == "H":
+    print("Su lista:")
+    showqueque = len(prevqueue)
+    for showqueque in prevqueue:
+        print(showqueque)
 
  else:
     print(equalbar)
