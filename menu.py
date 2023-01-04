@@ -106,102 +106,102 @@ while True:
                 print(equalbar)
                 print("|     Seleccion Invalida!     |")
                 print(equalbar)
-    if selection == "B":
+    elif selection == "B":
         for list3 in almuerzo:
             print(list3)
         while True:
-            orden = input("Seleciona una opcion: ")
-            if orden == "A":
+            orden1 = input("Seleciona una opcion: ")
+            if orden1 == "A":
                 prevqueue.append("Café")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Café", "añadidos a su lista!")
                 pricequeue.append(4.50 * float(cantidad))
-            elif orden == "B":
+            elif orden1 == "B":
                 prevqueue.append("Chocolate")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Chocolate", "añadidos a su lista!")
                 pricequeue.append(5 * float(cantidad))
-            elif orden == "C":
+            elif orden1 == "C":
                 prevqueue.append("Jugo de Fresas")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Jugo de Fresas", "añadidos a su lista!")
                 pricequeue.append(9 * float(cantidad))
-            elif orden == "D":
+            elif orden1 == "D":
                 prevqueue.append("Jugo de Papaya")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Jugo de Papaya", "añadidos a su lista!")
                 pricequeue.append(8 * float(cantidad))
-            elif orden == "E":
+            elif orden1 == "E":
                 prevqueue.append("Pan con Pollo")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Pan con Pollo", "añadidos a su lista!")
                 pricequeue.append(7 * float(cantidad))
-            elif orden == "F":
+            elif orden1 == "F":
                 prevqueue.append("Pan con Jamón")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Pan con Jamón", "añadidos a su lista!")
                 pricequeue.append(7 * float(cantidad))
-            elif orden == "G":
+            elif orden1 == "G":
                 prevqueue.append("Pan con Tortilla")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Pan con Tortilla", "añadidos a su lista!")
                 pricequeue.append(7 * float(cantidad))
-            elif orden == "H":
+            elif orden1 == "H":
                 print(equalbar)
                 print("Su lista:")
                 showqueque = len(prevqueue)
                 for showqueque in prevqueue:
                     print(showqueque)
                 print(equalbar)
-            elif orden == "J":
+            elif orden1 == "J":
                 break
             else:
                 print(equalbar)
                 print("|     Seleccion Invalida!     |")
                 print(equalbar)
-    if selection == "C":
+    elif selection == "C":
         for list4 in cena:
             print(list4)
         while True:
-            orden = input("Seleciona una opcion: ")
-            if orden == "A":
+            orden2 = input("Seleciona una opcion: ")
+            if orden2 == "A":
                 prevqueue.append("Pizza Exprés")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Pizza Exprés", "añadidos a su lista!")
                 pricequeue.append(9.50 * float(cantidad))
-            elif orden == "B":
+            elif orden2 == "B":
                 prevqueue.append("Ensalada Campera")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Ensalada Campera", "añadidos a su lista!")
                 pricequeue.append(7.50 * float(cantidad))
-            elif orden == "C":
+            elif orden2 == "C":
                 prevqueue.append("Gazpacho")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Gazpacho", "añadidos a su lista!")
                 pricequeue.append(6 * float(cantidad))
-            elif orden == "D":
+            elif orden2 == "D":
                 prevqueue.append("Caldo de Gallina")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Caldo de Gallina", "añadidos a su lista!")
                 pricequeue.append(6 * float(cantidad))
-            elif orden == "E":
+            elif orden2 == "E":
                 prevqueue.append("Pollo al horno")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Pollo al horno", "añadidos a su lista!")
                 pricequeue.append(7 * float(cantidad))
-            elif orden == "F":
+            elif orden2 == "F":
                 prevqueue.append("Menestrón")
                 cantidad = solicitar_cantidad()
                 print("x", cantidad, "Menestrón", "añadidos a su lista!")
                 pricequeue.append(7 * float(cantidad))
-            elif orden == "H":
+            elif orden2 == "H":
                 print(equalbar)
                 print("Su lista:")
                 showqueque = len(prevqueue)
                 for showqueque in prevqueue:
                     print(showqueque)
                 print(equalbar)
-            elif orden == "J":
+            elif orden2 == "J":
                 break
             else:
                 print(equalbar)
@@ -215,13 +215,20 @@ while True:
             print(showqueque)
         print(equalbar)
     elif selection == "D":
+        print("|      BOLETA DE VENTAS       |")
+        print(equalbar)
         subtotal = sum(pricequeue)
-        print("Subtotal:", subtotal)
+        print("| Subtotal:", subtotal)
         IGV = subtotal*0.18
-        print("IGV: " + repr(IGV))
+        IGV = round(IGV, 2)
+        print("| IGV: " + repr(IGV))
         total = subtotal + IGV
-        print("Total a pagar:", total)
-
+        total = round(total, 2)
+        print("| Total a pagar:", total)
+        pricequeue.clear()
+        prevqueue.clear()
+        print("|                             |\n|    Gracias por tu compra!   |")
+        print(equalbar)
     else:
         print(equalbar)
         print("|     Seleccion Invalida!     |")
