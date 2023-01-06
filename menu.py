@@ -2,8 +2,8 @@
 #           IDK            #
 ############################
 equalbar = "|=============================|"
-leavebar = "| J |========= SALIR =========|"
-invalid = [equalbar, "|     Seleccion Invalida!     |", equalbar]
+leavebar = "| J |========= ATRAS =========|"
+invalid = [equalbar, "|    Solo numeros enteros!    |", equalbar]
 invalid1 = len(invalid)
 
 
@@ -21,25 +21,26 @@ def solicitar_cantidad():
 ############################
 selec1 = [equalbar, "|        RESTAURANTE S.A      |", "|            MENÚ             |", equalbar,
                     "| A |Desayuno                 |", "| B |Almuerzo                 |",
-                    "| C |Cena                     |", "| D |========= PAGAR =========|", equalbar]
+                    "| C |Cena                     |", "| H |=== Lista de pedidos ====|",
+                    "| D |========= PAGAR =========|", equalbar]
 list1 = len(selec1)
 
 ############################
 #          Menus           #
 ############################
-desayuno = [equalbar, "| A |Café             |S/4.50 |", "| B |Chocolate        |S/5.00 |",
+desayuno = [equalbar, "|           Desayuno          |", equalbar, "| A |Café             |S/4.50 |", "| B |Chocolate        |S/5.00 |",
                       "| C |Jugo de Fresas   |S/9.00 |", "| D |Jugo de Papaya   |S/8.00 |",
                       "| E |Pan con Pollo    |S/7.00 |", "| F |Pan con Jamón    |S/7.00 |",
-                      "| G |Pan con Tortilla |S/7.00 |", "| H |=== Lista de pedidos  ===|", leavebar, equalbar]
+                      "| G |Pan con Tortilla |S/7.00 |", "| H |=== Lista de pedidos ====|", leavebar, equalbar]
 list2 = len(desayuno)
 
-almuerzo = [equalbar, "| A |Café             |S/4.50 |", "| B |Chocolate        |S/5.00 |",
+almuerzo = [equalbar, "|           Almuerzo          |", equalbar, "| A |Café             |S/4.50 |", "| B |Chocolate        |S/5.00 |",
                       "| C |Jugo de Fresas   |S/9.00 |", "| D |Jugo de Papaya   |S/8.00 |",
                       "| E |Pan con Pollo    |S/7.00 |", "| F |Pan con Jamón    |S/7.00 |",
-                      "| G |Pan con Tortilla |S/7.00 |", "| H |=== Lista de pedidos  ===|", leavebar, equalbar]
+                      "| G |Pan con Tortilla |S/7.00 |", "| H |=== Lista de pedidos ====|", leavebar, equalbar]
 list3 = len(almuerzo)
 
-cena = [equalbar, "| Cena |", "| A |Pizza Exprés     |S/9.50 |", "| B |Ensalada Campera |S/7.50 |",
+cena = [equalbar, "|            Cena             |", equalbar, "| A |Pizza Exprés     |S/9.50 |", "| B |Ensalada Campera |S/7.50 |",
                   "| C |Gazpacho         |S/6.00 |", "| D |Caldo de Gallina |S/6.00 |",
                   "| E |Pollo al horno   |S/5.50 |", "| F |Menestrón        |S/4.00 |", leavebar, equalbar]
 list4 = len(cena)
@@ -219,7 +220,7 @@ while True:
         print(equalbar)
         subtotal = sum(pricequeue)
         print("| Subtotal:", subtotal)
-        IGV = subtotal*0.18
+        IGV = subtotal * 0.18
         IGV = round(IGV, 2)
         print("| IGV: " + repr(IGV))
         total = subtotal + IGV
